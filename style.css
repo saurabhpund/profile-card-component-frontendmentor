@@ -1,0 +1,142 @@
+@import url(https://fonts.googleapis.com/css?family=Kumbh+Sans:100,200,300,regular,500,600,700,800,900);
+
+:root{
+    --primary-700: hsl(185, 75%, 39%);
+    --primary-900: hsl(229, 23%, 23%);
+    --primary-500: hsl(227, 10%, 46%);
+
+    --secondary-200: hsl(0, 0%, 59%);
+
+    --fs-name-stats: 18px;
+
+    --ff-Kumb-Sans: 'Kumb Sans';
+    --fw-400: 400;
+    --fw-700: 700;
+}
+
+
+img{
+    max-width: 100%;
+}
+
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    font-family: var(--ff-Kumb-Sans), sans-serif;   
+    display: grid;
+    place-items: center;
+}
+
+.container-main{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--primary-700);
+    z-index: 0;
+    display: grid;
+    place-items: center;
+}
+
+.container-main::after{
+    z-index: 1;
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-image: url('./images/bg-pattern-top.svg');
+    background-repeat: no-repeat;
+    background-position: -20em -35em ;
+}
+.container-main::before{
+    z-index: 2;
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-image: url('./images/bg-pattern-top.svg');
+    background-repeat: no-repeat;
+    background-position: 40em 20em;
+}
+
+.container-main main{
+    border-radius: 10px;
+    background-color: #fff;
+    z-index: 3;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 50px var(--primary-500);
+}
+
+main > picture{
+    width: 100%;
+}
+
+main > .imageDiv{
+    width: 5em;
+    height: 5em;
+    overflow: hidden;
+    border-radius: 50%;
+    position: absolute;
+    margin: 0 40%;
+    top: 6em;
+    border: 2px solid #fff;
+}
+
+main > .title{
+    padding-inline: 2em;
+    padding-top: 3em;
+    padding-bottom: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+main > .title strong{
+    line-height: 2em;
+    color: var(--primary-900);
+}
+
+main > .title strong span,p{
+    color: var(--primary-500);
+}
+
+
+main > .below{
+    padding: 1em;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    border-top: 1px solid var(--secondary-200);
+}
+
+main > .below .social h4{
+    color: var(--primary-900);
+}
+
+main > .below .social{
+    display: block;
+}
+
+main > .below .social > p{
+    font-size: 0.6em;
+    letter-spacing: 1px;
+    color: var(--primary-500);
+    margin-block: 5px;
+}
+
+
+@media screen and (max-width: 38em) {
+    .container-main::before{
+        background-position: -45em -40em;
+    }
+    .container-main::after{
+        background-position: 10em 15em;
+    }
+}
